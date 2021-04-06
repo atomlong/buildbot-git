@@ -1,9 +1,23 @@
+From 198461cd71e1996eb6e538c2eedc40fd96b65fef Mon Sep 17 00:00:00 2001
+From: atomlong <atom.long@hotmail.com>
+Date: Tue, 6 Apr 2021 17:11:43 +0800
+Subject: [PATCH] skip linux distro test
+
+---
+ master/buildbot/test/unit/test_buildbot_net_usage_data.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
 diff --git a/master/buildbot/test/unit/test_buildbot_net_usage_data.py b/master/buildbot/test/unit/test_buildbot_net_usage_data.py
-index 709c804a9..7885d1bcd 100644
+index 1609ec17c..3a97e4fd4 100644
 --- a/master/buildbot/test/unit/test_buildbot_net_usage_data.py
 +++ b/master/buildbot/test/unit/test_buildbot_net_usage_data.py
-@@ -153,4 +153,3 @@ class Tests(unittest.TestCase):
-         distro = linux_distribution()
+@@ -151,5 +151,5 @@ class Tests(unittest.TestCase):
          self.assertEqual(len(distro), 2)
          self.assertNotIn("unknown", distro[0])
--        self.assertNotIn("unknown", distro[1])
+         # Rolling distributions like Arch Linux (arch) does not have VERSION_ID
+-        if distro[0] not in ["arch", "gentoo"]:
++        if distro[0] not in ["arch", "archarm", "gentoo"]:
+             self.assertNotIn("unknown", distro[1])
+-- 
+2.31.1.windows.1
+

@@ -27,7 +27,7 @@ conflicts=("$_pkgname")
 source=(git+https://github.com/buildbot/buildbot.git
         skip-linux-distro-test.patch)
 sha256sums=('SKIP'
-            '42fc2a771034c4134006ed18b52916e668aba3e2046b2fe188c7abcb3cffc0a5')
+            '6d52ce4095a8e73c3f4c2f0e06f8b11f04c623f6e46a14a9d45c8370bb92dbc2')
 
 pkgver() {
   cd buildbot
